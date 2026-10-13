@@ -116,3 +116,8 @@ El DAG completo termino con nueve tareas exitosas. Se validaron 18.265 medicione
 ![Evolucion anual](reports/resultados/03_aqi_anual.png)
 
 ![Correlaciones por ciudad](reports/resultados/04_correlaciones_ciudad.png)
+
+
+## Prueba de protección de carga
+
+Después de ejecutar el notebook, establece `INDIA_PROJECT_ROOT` con la carpeta del proyecto y ejecuta `python -m unittest discover -s tests`. La prueba usa el último lote aprobado; `INDIA_TEST_RUN_ID` permite seleccionar uno. Comprueba el rechazo de precipitación negativa y de un CSV modificado después de aprobarlo. Sin un lote previo, informa que la prueba se omite.
