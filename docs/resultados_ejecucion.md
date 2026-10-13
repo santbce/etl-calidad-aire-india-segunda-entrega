@@ -35,4 +35,4 @@ Las mediciones de aire proceden de Kaggle y no documentan todas las unidades. ER
 
 La suite aprobó el lote válido con cobertura completa. La falla deliberada de precipitación negativa fue rechazada, su carga quedó bloqueada y la huella del warehouse no cambió. La tabla airflow_task_states.csv registra los estados reales del DAG. El dump warehouse.sql conserva la instantánea PostgreSQL.
 
-La arquitectura, los pasos ETL, el diseño del DAG, la API y la suite se documentan en README.md. Revisar las salidas y publicar el repositorio desde la cuenta del equipo antes de entregar.
+La arquitectura, los pasos ETL, el diseño del DAG, la API y la suite se documentan en README.md. El código, los diagramas y las evidencias están publicados en el repositorio público del equipo: https://github.com/santbce/etl-calidad-aire-india-segunda-entrega. La ejecución completa de prueba del DAG terminó con nueve tareas exitosas. La comprobación de una ejecución activada por el scheduler está pendiente; no se presenta como una prueba diaria ya completada. Después de esa revisión, el equipo realizará la entrega en la plataforma del curso.
