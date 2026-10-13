@@ -1,0 +1,8 @@
+# Airflow se instala por separado con los constraints oficiales, como en clase.
+great-expectations==1.24.0
+pandas>=2.1,<3
+requests>=2.31,<3
+beautifulsoup4>=4.12,<5
+matplotlib>=3.8,<4
+seaborn>=0.13,<1
+psycopg[binary]>=3.2,<4

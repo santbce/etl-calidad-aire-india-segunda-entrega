@@ -1,0 +1,39 @@
+{
+  "rows": 18265,
+  "aqi_mean": 317.50521215439363,
+  "aqi_categories": {
+    "Very Poor": 5501,
+    "Severe": 5258,
+    "Moderate": 4258,
+    "Poor": 3129,
+    "Satisfactory": 113,
+    "Good": 6
+  },
+  "aqi_weather_correlations_by_city": {
+    "Bangalore": {
+      "temperature_2m_mean": -0.007080038258337564,
+      "precipitation_sum": 0.04181256757906805,
+      "wind_speed_10m_max": -0.015673834122889547
+    },
+    "Chennai": {
+      "temperature_2m_mean": 0.023394984863851782,
+      "precipitation_sum": -0.020866554416126486,
+      "wind_speed_10m_max": 0.011120834950397715
+    },
+    "Delhi": {
+      "temperature_2m_mean": 0.01725453723066047,
+      "precipitation_sum": 0.00487873171910529,
+      "wind_speed_10m_max": 0.013581580845264429
+    },
+    "Kolkata": {
+      "temperature_2m_mean": 0.0025705838365574765,
+      "precipitation_sum": 0.0333501265214514,
+      "wind_speed_10m_max": 0.0024917298020273736
+    },
+    "Mumbai": {
+      "temperature_2m_mean": -0.0044784420869067205,
+      "precipitation_sum": -0.01612837915017012,
+      "wind_speed_10m_max": 0.005995563750390929
+    }
+  }
+}

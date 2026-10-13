@@ -1,0 +1,13 @@
+flowchart LR
+  S1[(SQLite primera entrega)] --> A[Extraer SQL aire]
+  W[Wikipedia HTML] --> C[(SQLite coordenadas)]
+  C --> B[Extraer dataset ciudades desde BD]
+  B --> P[Extraer API histórica Open-Meteo]
+  A --> E[EDA de tres fuentes]
+  B --> E
+  P --> E
+  E --> T[Normalizar y unir por ciudad y fecha]
+  T --> Q[Checkpoint Great Expectations]
+  Q -->|Aprobado| D[(PostgreSQL warehouse estrella)]
+  Q -->|Rechazado| F[Tarea fallida y carga bloqueada]
+  D --> V[Consultas SQL y visualizaciones]

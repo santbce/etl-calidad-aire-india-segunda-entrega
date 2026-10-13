@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+airflow_home/
+data/raw/cities/*.html
+data/raw/weather/*.json
+data/runs/
+data/*.sqlite
+primera_entrega/database/*.db
+*.log
+# Conservar notebook, código, documentación y ejemplos de resultados sin credenciales.

@@ -1,0 +1,12 @@
+{
+  "verified_at_utc": "2026-10-13T00:29:50.290358+00:00",
+  "database": "PostgreSQL",
+  "rows": 18265,
+  "valid_gx_passed": true,
+  "coverage_complete": true,
+  "negative_precipitation_rejected": true,
+  "invalid_load_blocked": true,
+  "warehouse_unchanged_after_rejection": true,
+  "idempotent_reload_verified": true,
+  "run_id": "manual__2026-10-13T00:15:29+00:00"
+}
