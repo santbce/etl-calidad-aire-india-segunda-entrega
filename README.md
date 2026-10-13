@@ -52,7 +52,7 @@ Se detiene la tarea de validación con una excepción si falla el checkpoint. La
 
 ## EDA y decisiones de transformación
 
-El notebook genera tipos, nulos, duplicados de fila y de clave, frecuencias, estadísticas, IQR e histogramas para las tres fuentes antes de publicar. Los resultados se guardan por ejecución en `data/runs/<run_id>/eda_sources.json`. El notebook muestra estas tablas y exige interpretarlas antes de entregar.
+El notebook genera tipos, nulos, duplicados de fila y de clave, frecuencias, estadísticas, IQR e histogramas para las tres fuentes antes de publicar. Los resultados se guardan por ejecución en `data/runs/<run_id>/eda_sources.json`. El notebook ejecutado muestra estas tablas e incluye la interpretación de los resultados.
 
 Se convierte la fecha a ISO y las medidas a numérico. Las claves de ciudad provienen de la base original. Se unen coordenadas por `city_id` con `validate='many_to_one'` y clima por `city_id,date` con `validate='one_to_one'`, conservando todas las filas con `left join`. Los registros sin clima se documentan y detienen el lote. No se imputan datos meteorológicos, no se convierten nulos en cero ni se eliminan outliers solo por IQR. No se inventan unidades de contaminantes que el dataset no documenta.
 
@@ -72,7 +72,7 @@ PostgreSQL aplica PK, FK, UNIQUE y CHECK. Se reemplaza el lote dentro de una sol
 
 ## Resultados y evidencias
 
-Las figuras y el dashboard se generan leyendo únicamente `india_dw.air_quality_enriched` tras la carga. Incluyen promedio de AQI por ciudad, distribuciones del clima, evolución anual y correlaciones por ciudad. `findings.json`, `monthly.csv` y `correlations_by_city.csv` permiten comprobar cifras. No se deben escribir conclusiones sobre clima antes de ejecutar esa parte.
+Las figuras y el dashboard se generan leyendo únicamente `india_dw.air_quality_enriched` tras la carga. Incluyen promedio de AQI por ciudad, distribuciones del clima, evolución anual y correlaciones por ciudad. `findings.json`, `monthly.csv` y `correlations_by_city.csv` permiten comprobar cifras. Las conclusiones de la ejecución se presentan en `docs/resultados_ejecucion.md`.
 
 Para evidenciar la orquestación, el notebook ejecuta `airflow dags test` y consulta `dag_run` y `task_instance` en la base de metadatos. Después permite iniciar scheduler/webserver para observar el DAG. La prueba deliberada introduce precipitación negativa en un lote separado: GX debe rechazarlo y el lote del warehouse debe conservarse. El notebook descarga el código, reportes y un dump PostgreSQL al terminar.
 
@@ -80,7 +80,7 @@ Para evidenciar la orquestación, el notebook ejecuta `airflow dags test` y cons
 
 Airflow puede programar ejecuciones mientras el runtime de Colab permanece activo. Colab no garantiza un servicio diario permanente y al terminar la sesión pueden desaparecer el entorno y las bases. Por eso se exportan resultados y dump al Drive. Para operación continua futura habría que alojar el mismo DAG en un servidor persistente; Docker no es necesario para esta práctica.
 
-Antes de entregar: ejecutar el notebook completo en Colab, revisar los resultados y completar la interpretación del EDA, guardar evidencia de estados de tareas y fallo deliberado, confirmar con el profesor la fecha indicada en clase y publicar desde la cuenta del equipo en GitHub. La existencia de una URL en el README original no prueba que esta segunda entrega esté publicada. No se ha publicado ni enviado nada al profesor automáticamente.
+El notebook completo se ejecutó en Colab. La interpretación, los estados de las nueve tareas, el fallo deliberado y la comprobación de idempotencia están incluidos en esta entrega. El repositorio público contiene el código y las evidencias. La entrega al profesor se realiza mediante el enlace o los archivos según la plataforma del curso.
 
 ## Correspondencia con los materiales de clase
 
@@ -104,7 +104,7 @@ Se revisaron las diapositivas y el código de prácticas. Las grabaciones MP4 no
 
 ## Estructura
 
-`primera_entrega/`: copia sin cambios del proyecto anterior. `src/`: funciones Python. `dags/`: orquestación. `sql/`: DDL PostgreSQL. `data/`: fuentes adicionales, caché y lotes. `reports/`: dashboard y hallazgos desde warehouse. `notebooks/`: notebook Colab. `tests/`: pruebas de protección de carga.
+`data/etl-calidad-aire-india-main.zip`: proyecto original sin cambios; el notebook lo extrae en `primera_entrega/` durante la ejecución. `src/`: funciones Python. `dags/`: orquestación. `sql/`: DDL PostgreSQL. `data/`: ZIP original; las fuentes adicionales, caché y lotes se generan al ejecutar el notebook. `reports/`: dashboard y hallazgos desde warehouse. `notebooks/`: notebook Colab. `tests/`: pruebas de protección de carga.
 
 
 ## Ejecucion verificada
