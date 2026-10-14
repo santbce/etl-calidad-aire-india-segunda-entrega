@@ -6,6 +6,7 @@ import os
 #aqui guardamos los graficos como imagenes para mostrarlos en el notebook
 os.environ['MPLBACKEND'] = 'Agg'
 import json
+import sys
 import hashlib
 import sqlite3
 import time
@@ -246,16 +247,18 @@ def validate_dataframe(df, report_path):
     context = gx.get_context(mode='ephemeral')
     suite = gx.ExpectationSuite(name='contrato_calidad_aire_india')
     suite.add_expectation(gxe.ExpectTableRowCountToEqual(value=NROWS))
-    for c in ['measurement_id','city_id','city_name','date','aqi_bucket','latitude','longitude'] + MEASURES + WEATHER:
+    for c in ['measurement_id','city_id','city_name','date','aqi_bucket','latitude','longitude','grid_latitude','grid_longitude'] + MEASURES + WEATHER:
         suite.add_expectation(gxe.ExpectColumnValuesToNotBeNull(column=c))
     suite.add_expectation(gxe.ExpectColumnValuesToBeUnique(column='measurement_id'))
     suite.add_expectation(gxe.ExpectCompoundColumnsToBeUnique(column_list=['city_id','date']))
     suite.add_expectation(gxe.ExpectColumnValuesToBeInSet(column='city_name', value_set=CITIES))
     suite.add_expectation(gxe.ExpectColumnValuesToBeInSet(column='aqi_bucket', value_set=['Good','Satisfactory','Moderate','Poor','Very Poor','Severe']))
     for c in MEASURES + ['precipitation_sum', 'wind_speed_10m_max']:
-        suite.add_expectation(gxe.ExpectColumnValuesToBeBetween(column=c, min_value=0))
+        suite.add_expectation(gxe.ExpectColumnValuesToBeBetween(column=c, min_value=0, max_value=sys.float_info.max))
     suite.add_expectation(gxe.ExpectColumnValuesToBeBetween(column='latitude', min_value=-90, max_value=90))
     suite.add_expectation(gxe.ExpectColumnValuesToBeBetween(column='longitude', min_value=-180, max_value=180))
+    suite.add_expectation(gxe.ExpectColumnValuesToBeBetween(column='grid_latitude', min_value=-90, max_value=90))
+    suite.add_expectation(gxe.ExpectColumnValuesToBeBetween(column='grid_longitude', min_value=-180, max_value=180))
     suite.add_expectation(gxe.ExpectColumnValuesToBeBetween(column='temperature_2m_mean', min_value=-90, max_value=60))
     suite.add_expectation(gxe.ExpectColumnValuesToBeInSet(column='date', value_set=pd.date_range(START, END).strftime('%Y-%m-%d').tolist()))
     suite = context.suites.add(suite)
