@@ -74,7 +74,7 @@ postgresql aplica pk, fk, unique y check. se reemplaza el lote dentro de una sol
 
 las figuras y el dashboard se generan leyendo únicamente `india_dw.air_quality_enriched` tras la carga. incluyen promedio de aqi por ciudad, distribuciones del clima, evolución anual y correlaciones por ciudad. `findings.json`, `monthly.csv` y `correlations_by_city.csv` permiten comprobar cifras. las conclusiones de la ejecución se presentan en `docs/resultados_ejecucion.md`.
 
-aqui probamos la orquestacion ejecutando `airflow dags test` y consulta `dag_run` y `task_instance` en la base de metadatos. después permite iniciar scheduler/webserver para observar el dag. la prueba deliberada introduce precipitación negativa en un lote separado: gx debe rechazarlo y el lote del warehouse debe conservarse. el notebook descarga el código, reportes y un dump postgresql al terminar.
+aqui probamos el dag con `airflow dags test` y consultamos `dag_run` y `task_instance` para revisar los estados de las tareas. después permite iniciar scheduler/webserver para observar el dag. la prueba deliberada introduce precipitación negativa en un lote separado: gx debe rechazarlo y el lote del warehouse debe conservarse. el notebook descarga el código, reportes y un dump postgresql al terminar.
 
 #aqui explicamos como guardar y entregar el proyecto
 
