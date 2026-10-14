@@ -1,4 +1,4 @@
-"""Pruebas reales sobre el lote integrado; no requieren escribir en la entrada."""
+#aqui probamos que los datos invalidos no se puedan cargar
 import sys
 from pathlib import Path
 import unittest

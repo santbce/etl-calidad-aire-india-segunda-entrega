@@ -1,26 +1,26 @@
-# Diagramas de la segunda entrega
+#aqui mostramos los diagramas de la segunda entrega
 
-## Arquitectura
+#aqui mostramos la arquitectura
 
 ```mermaid
 flowchart LR
-  S1[(SQLite primera entrega)] --> A[Extraer SQL aire]
-  W[Wikipedia HTML] --> C[(SQLite coordenadas)]
-  C --> B[Extraer dataset ciudades desde BD]
-  B --> P[Extraer API histórica Open-Meteo]
-  A --> E[EDA de tres fuentes]
+  S1[(sqlite primera entrega)] --> A[extraer sql aire]
+  W[wikipedia html] --> C[(sqlite coordenadas)]
+  C --> B[extraer dataset ciudades desde bd]
+  B --> P[extraer api histórica open-meteo]
+  A --> E[eda de tres fuentes]
   B --> E
   P --> E
-  E --> T[Normalizar y unir por ciudad y fecha]
-  T --> Q[Checkpoint Great Expectations]
-  Q -->|Aprobado| D[(PostgreSQL warehouse estrella)]
-  Q -->|Rechazado| F[Tarea fallida y carga bloqueada]
-  D --> V[Consultas SQL y visualizaciones]
+  E --> T[normalizar y unir por ciudad y fecha]
+  T --> Q[checkpoint great expectations]
+  Q -->|Aprobado| D[(postgresql warehouse estrella)]
+  Q -->|Rechazado| F[tarea fallida y carga bloqueada]
+  D --> V[consultas sql y visualizaciones]
 ```
 
-## Modelo estrella
+#aqui mostramos el modelo estrella
 
-Grano: una medicion por ciudad y dia. El DDL completo esta en `sql/warehouse.sql`; el diagrama destaca las medidas principales.
+grano: una medicion por ciudad y dia. el ddl completo esta en `sql/warehouse.sql`; el diagrama destaca las medidas principales.
 
 ```mermaid
 erDiagram

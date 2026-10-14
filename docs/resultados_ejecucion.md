@@ -1,38 +1,38 @@
-# Resultados de la segunda entrega en Colab
+#aqui resultados de la segunda entrega en colab
 
-Samuel Flores y Santiago Becerra. ETL G51.
+samuel flores y santiago becerra. etl g51.
 
-Integramos 18,265 mediciones de calidad del aire con coordenadas y clima histórico. El AQI promedio fue 317.51. Las gráficas y las correlaciones se calcularon desde PostgreSQL después de aprobar Great Expectations.
+integramos 18,265 mediciones de calidad del aire con coordenadas y clima histórico. el aqi promedio fue 317.51. las gráficas y las correlaciones se calcularon desde postgresql después de aprobar great expectations.
 
-## EDA y decisiones
+#aqui eda y decisiones
 
-air: 18,265 filas, 0 valores faltantes y 0 claves duplicadas. Los tipos y estadísticas completos se conservan en eda_sources.json.
+air: 18,265 filas, 0 valores faltantes y 0 claves duplicadas. los tipos y estadísticas completos se conservan en eda_sources.json.
 
-cities: 5 filas, 0 valores faltantes y 0 claves duplicadas. Los tipos y estadísticas completos se conservan en eda_sources.json.
+cities: 5 filas, 0 valores faltantes y 0 claves duplicadas. los tipos y estadísticas completos se conservan en eda_sources.json.
 
-weather: 18,265 filas, 0 valores faltantes y 0 claves duplicadas. Los tipos y estadísticas completos se conservan en eda_sources.json.
+weather: 18,265 filas, 0 valores faltantes y 0 claves duplicadas. los tipos y estadísticas completos se conservan en eda_sources.json.
 
-El IQR marcó 532 observaciones en temperature_2m_mean, 2653 observaciones en precipitation_sum, 262 observaciones en wind_speed_10m_max. Conservamos esas observaciones porque una marca estadística no demuestra un error. No imputamos clima ni eliminamos mediciones válidas.
+el iqr marcó 532 observaciones en temperature_2m_mean, 2653 observaciones en precipitation_sum, 262 observaciones en wind_speed_10m_max. conservamos esas observaciones porque una marca estadística no demuestra un error. no imputamos clima ni eliminamos mediciones válidas.
 
-La dimensión geográfica contiene solo cinco ciudades. Sus valores extremos por IQR reflejan diferencias entre ubicaciones y no justifican eliminar ciudades. Los datos originales no presentan outliers IQR en los contaminantes; este resultado no demuestra representatividad de la fuente de Kaggle.
+la dimensión geográfica contiene solo cinco ciudades. sus valores extremos por iqr reflejan diferencias entre ubicaciones y no justifican eliminar ciudades. los datos originales no presentan outliers iqr en los contaminantes; este resultado no demuestra representatividad de la fuente de kaggle.
 
-## Visualizaciones e interpretación
+#aqui visualizaciones e interpretación
 
-Las categorías AQI más frecuentes fueron: Very Poor: 5,501, Severe: 5,258, Moderate: 4,258, Poor: 3,129, Satisfactory: 113, Good: 6. Los gráficos muestran promedios por ciudad, evolución anual, distribuciones del clima y correlaciones separadas por ciudad.
+las categorías aqi más frecuentes fueron: very poor: 5,501, severe: 5,258, moderate: 4,258, poor: 3,129, satisfactory: 113, good: 6. los gráficos muestran promedios por ciudad, evolución anual, distribuciones del clima y correlaciones separadas por ciudad.
 
            temperature_2m_mean  precipitation_sum  wind_speed_10m_max
-Bangalore               -0.007              0.042              -0.016
-Chennai                  0.023             -0.021               0.011
-Delhi                    0.017              0.005               0.014
-Kolkata                  0.003              0.033               0.002
-Mumbai                  -0.004             -0.016               0.006
+bangalore               -0.007              0.042              -0.016
+chennai                  0.023             -0.021               0.011
+delhi                    0.017              0.005               0.014
+kolkata                  0.003              0.033               0.002
+mumbai                  -0.004             -0.016               0.006
 
-La mayor magnitud de correlación entre AQI y las variables meteorológicas fue 0.042 en el análisis por ciudad. Las asociaciones lineales son pequeñas y no sustentan una explicación causal del AQI.
+la mayor magnitud de correlación entre aqi y las variables meteorológicas fue 0.042 en el análisis por ciudad. las asociaciones lineales son pequeñas y no sustentan una explicación causal del aqi.
 
-Las mediciones de aire proceden de Kaggle y no documentan todas las unidades. ERA5 representa celdas de reanálisis y las coordenadas corresponden a ciudades, no a estaciones. Interpretamos las fechas originales como días locales de India; esta hipótesis requiere confirmación de la procedencia antes de presentar coincidencia temporal exacta.
+las mediciones de aire proceden de kaggle y no documentan todas las unidades. era5 representa celdas de reanálisis y las coordenadas corresponden a ciudades, no a estaciones. interpretamos las fechas originales como días locales de india; esta hipótesis requiere confirmación de la procedencia antes de presentar coincidencia temporal exacta.
 
-## Evidencia de calidad y orquestación
+#aqui evidencia de calidad y orquestación
 
-La suite aprobó el lote válido con cobertura completa. La falla deliberada de precipitación negativa fue rechazada, su carga quedó bloqueada y la huella del warehouse no cambió. La tabla airflow_task_states.csv registra los estados reales del DAG. El dump warehouse.sql conserva la instantánea PostgreSQL.
+la suite aprobó el lote válido con cobertura completa. la falla deliberada de precipitación negativa fue rechazada, su carga quedó bloqueada y la huella del warehouse no cambió. la tabla airflow_task_states.csv registra los estados reales del dag. el dump warehouse.sql conserva la instantánea postgresql.
 
-La arquitectura, los pasos ETL, el diseño del DAG, la API y la suite se documentan en README.md. El código, los diagramas y las evidencias están publicados en el repositorio público del equipo: https://github.com/santbce/etl-calidad-aire-india-segunda-entrega. La ejecución completa de prueba del DAG terminó con nueve tareas exitosas. La comprobación de una ejecución activada por el scheduler está pendiente; no se presenta como una prueba diaria ya completada. Después de esa revisión, el equipo realizará la entrega en la plataforma del curso.
+la arquitectura, los pasos etl, el diseño del dag, la api y la suite se documentan en readme.md. el código, los diagramas y las evidencias están publicados en el repositorio público del equipo: https://github.com/santbce/etl-calidad-aire-india-segunda-entrega. la ejecución completa de prueba del dag terminó con nueve tareas exitosas. la comprobación de una ejecución activada por el scheduler está pendiente; no se presenta como una prueba diaria ya completada. después de esa revisión, el equipo realizará la entrega en la plataforma del curso.

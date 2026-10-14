@@ -1,4 +1,4 @@
-"""Mismo patrón with DAG y PythonOperator de airflow_intro y airflow_gx."""
+#aqui organizamos las tareas del proyecto con airflow
 from datetime import timedelta
 from pathlib import Path
 import os
