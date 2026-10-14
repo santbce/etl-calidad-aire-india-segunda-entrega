@@ -1,22 +1,22 @@
-#aqui resultados de la segunda entrega en colab
+#aqui explicamos los resultados de la segunda entrega
 
 samuel flores y santiago becerra. etl g51.
 
-integramos 18,265 mediciones de calidad del aire con coordenadas y clima histórico. el aqi promedio fue 317.51. las gráficas y las correlaciones se calcularon desde postgresql después de aprobar great expectations.
+aqui lo que hicimos fue unir 18.265 mediciones de calidad del aire con coordenadas y clima histórico. el aqi promedio fue 317.51. las gráficas y las correlaciones se calcularon desde postgresql después de aprobar great expectations.
 
-#aqui eda y decisiones
+#aqui explicamos lo que encontramos al revisar los datos
 
-air: 18,265 filas, 0 valores faltantes y 0 claves duplicadas. los tipos y estadísticas completos se conservan en eda_sources.json.
+air: 18.265 filas, 0 valores faltantes y 0 claves duplicadas. los tipos y estadísticas completos se conservan en eda_sources.json.
 
 cities: 5 filas, 0 valores faltantes y 0 claves duplicadas. los tipos y estadísticas completos se conservan en eda_sources.json.
 
-weather: 18,265 filas, 0 valores faltantes y 0 claves duplicadas. los tipos y estadísticas completos se conservan en eda_sources.json.
+weather: 18.265 filas, 0 valores faltantes y 0 claves duplicadas. los tipos y estadísticas completos se conservan en eda_sources.json.
 
 el iqr marcó 532 observaciones en temperature_2m_mean, 2653 observaciones en precipitation_sum, 262 observaciones en wind_speed_10m_max. conservamos esas observaciones porque una marca estadística no demuestra un error. no imputamos clima ni eliminamos mediciones válidas.
 
 la dimensión geográfica contiene solo cinco ciudades. sus valores extremos por iqr reflejan diferencias entre ubicaciones y no justifican eliminar ciudades. los datos originales no presentan outliers iqr en los contaminantes; este resultado no demuestra representatividad de la fuente de kaggle.
 
-#aqui visualizaciones e interpretación
+#aqui explicamos lo que muestran los graficos
 
 las categorías aqi más frecuentes fueron: very poor: 5,501, severe: 5,258, moderate: 4,258, poor: 3,129, satisfactory: 113, good: 6. los gráficos muestran promedios por ciudad, evolución anual, distribuciones del clima y correlaciones separadas por ciudad.
 
@@ -31,7 +31,7 @@ la mayor magnitud de correlación entre aqi y las variables meteorológicas fue 
 
 las mediciones de aire proceden de kaggle y no documentan todas las unidades. era5 representa celdas de reanálisis y las coordenadas corresponden a ciudades, no a estaciones. interpretamos las fechas originales como días locales de india; esta hipótesis requiere confirmación de la procedencia antes de presentar coincidencia temporal exacta.
 
-#aqui evidencia de calidad y orquestación
+#aqui mostramos lo que dieron las pruebas
 
 la suite aprobó el lote válido con cobertura completa. la falla deliberada de precipitación negativa fue rechazada, su carga quedó bloqueada y la huella del warehouse no cambió. la tabla airflow_task_states.csv registra los estados reales del dag. el dump warehouse.sql conserva la instantánea postgresql.
 
