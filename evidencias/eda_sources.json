@@ -1,0 +1,389 @@
+{
+  "air": {
+    "rows": 18265,
+    "columns": [
+      "measurement_id",
+      "city_name",
+      "city_id",
+      "date",
+      "aqi_bucket",
+      "pm25",
+      "pm10",
+      "no_value",
+      "no2",
+      "nox",
+      "nh3",
+      "co",
+      "so2",
+      "o3",
+      "aqi"
+    ],
+    "types": {
+      "measurement_id": "int64",
+      "city_name": "object",
+      "city_id": "int64",
+      "date": "object",
+      "aqi_bucket": "object",
+      "pm25": "float64",
+      "pm10": "float64",
+      "no_value": "float64",
+      "no2": "float64",
+      "nox": "float64",
+      "nh3": "float64",
+      "co": "float64",
+      "so2": "float64",
+      "o3": "float64",
+      "aqi": "float64"
+    },
+    "missing": {
+      "measurement_id": 0,
+      "city_name": 0,
+      "city_id": 0,
+      "date": 0,
+      "aqi_bucket": 0,
+      "pm25": 0,
+      "pm10": 0,
+      "no_value": 0,
+      "no2": 0,
+      "nox": 0,
+      "nh3": 0,
+      "co": 0,
+      "so2": 0,
+      "o3": 0,
+      "aqi": 0
+    },
+    "exact_duplicates": 0,
+    "key_duplicates": 0,
+    "summary": {
+      "measurement_id": {
+        "count": 18265.0,
+        "mean": 9133.0,
+        "std": 5272.795668966006,
+        "min": 1.0,
+        "25%": 4567.0,
+        "50%": 9133.0,
+        "75%": 13699.0,
+        "max": 18265.0
+      },
+      "city_id": {
+        "count": 18265.0,
+        "mean": 3.0,
+        "std": 1.4142522777203619,
+        "min": 1.0,
+        "25%": 2.0,
+        "50%": 3.0,
+        "75%": 4.0,
+        "max": 5.0
+      },
+      "pm25": {
+        "count": 18265.0,
+        "mean": 250.59769504516836,
+        "std": 144.46029244216174,
+        "min": 0.0,
+        "25%": 125.7,
+        "50%": 251.0,
+        "75%": 376.2,
+        "max": 499.9
+      },
+      "pm10": {
+        "count": 18265.0,
+        "mean": 299.4424911032029,
+        "std": 173.47990561706243,
+        "min": 0.0,
+        "25%": 150.1,
+        "50%": 300.3,
+        "75%": 450.0,
+        "max": 600.0
+      },
+      "no_value": {
+        "count": 18265.0,
+        "mean": 100.48103476594581,
+        "std": 57.774795013145095,
+        "min": 0.0,
+        "25%": 50.6,
+        "50%": 100.2,
+        "75%": 151.0,
+        "max": 200.0
+      },
+      "no2": {
+        "count": 18265.0,
+        "mean": 75.41591568573774,
+        "std": 43.460066444329065,
+        "min": 0.0,
+        "25%": 37.7,
+        "50%": 76.0,
+        "75%": 113.2,
+        "max": 150.0
+      },
+      "nox": {
+        "count": 18265.0,
+        "mean": 125.96407883931018,
+        "std": 72.40389283047207,
+        "min": 0.0,
+        "25%": 63.1,
+        "50%": 126.2,
+        "75%": 188.9,
+        "max": 250.0
+      },
+      "nh3": {
+        "count": 18265.0,
+        "mean": 25.06504243087873,
+        "std": 14.452018899942024,
+        "min": 0.0,
+        "25%": 12.6,
+        "50%": 25.3,
+        "75%": 37.6,
+        "max": 50.0
+      },
+      "co": {
+        "count": 18265.0,
+        "mean": 5.00245113605256,
+        "std": 2.8894388189944706,
+        "min": 0.0,
+        "25%": 2.49,
+        "50%": 5.0,
+        "75%": 7.51,
+        "max": 10.0
+      },
+      "so2": {
+        "count": 18265.0,
+        "mean": 49.83583903640843,
+        "std": 28.98873865637826,
+        "min": 0.0,
+        "25%": 24.4,
+        "50%": 49.9,
+        "75%": 75.1,
+        "max": 100.0
+      },
+      "o3": {
+        "count": 18265.0,
+        "mean": 100.40673966602792,
+        "std": 57.59143586996542,
+        "min": 0.0,
+        "25%": 50.6,
+        "50%": 100.7,
+        "75%": 150.4,
+        "max": 200.0
+      },
+      "aqi": {
+        "count": 18265.0,
+        "mean": 317.50521215439363,
+        "std": 113.89481557892762,
+        "min": 26.9,
+        "25%": 207.1,
+        "50%": 331.6,
+        "75%": 414.0,
+        "max": 500.0
+      }
+    },
+    "iqr_outliers": {
+      "measurement_id": 0,
+      "city_id": 0,
+      "pm25": 0,
+      "pm10": 0,
+      "no_value": 0,
+      "no2": 0,
+      "nox": 0,
+      "nh3": 0,
+      "co": 0,
+      "so2": 0,
+      "o3": 0,
+      "aqi": 0
+    },
+    "categories": {
+      "city_name": {
+        "Delhi": 3653,
+        "Mumbai": 3653,
+        "Chennai": 3653,
+        "Kolkata": 3653,
+        "Bangalore": 3653
+      },
+      "aqi_bucket": {
+        "Very Poor": 5501,
+        "Severe": 5258,
+        "Moderate": 4258,
+        "Poor": 3129,
+        "Satisfactory": 113,
+        "Good": 6
+      }
+    }
+  },
+  "cities": {
+    "rows": 5,
+    "columns": [
+      "city_id",
+      "city_name",
+      "latitude",
+      "longitude",
+      "source_url",
+      "extracted_at_utc"
+    ],
+    "types": {
+      "city_id": "int64",
+      "city_name": "object",
+      "latitude": "float64",
+      "longitude": "float64",
+      "source_url": "object",
+      "extracted_at_utc": "object"
+    },
+    "missing": {
+      "city_id": 0,
+      "city_name": 0,
+      "latitude": 0,
+      "longitude": 0,
+      "source_url": 0,
+      "extracted_at_utc": 0
+    },
+    "exact_duplicates": 0,
+    "key_duplicates": 0,
+    "summary": {
+      "city_id": {
+        "count": 5.0,
+        "mean": 3.0,
+        "std": 1.5811388300841898,
+        "min": 1.0,
+        "25%": 2.0,
+        "50%": 3.0,
+        "75%": 4.0,
+        "max": 5.0
+      },
+      "latitude": {
+        "count": 5.0,
+        "mean": 19.262999999999998,
+        "std": 6.63343191463137,
+        "min": 12.97889,
+        "25%": 13.0825,
+        "50%": 19.07611,
+        "75%": 22.5675,
+        "max": 28.61
+      },
+      "longitude": {
+        "count": 5.0,
+        "mean": 79.268834,
+        "std": 5.73721330527984,
+        "min": 72.8775,
+        "25%": 77.23,
+        "50%": 77.59167,
+        "75%": 80.275,
+        "max": 88.37
+      }
+    },
+    "iqr_outliers": {
+      "city_id": 0,
+      "latitude": 0,
+      "longitude": 1
+    },
+    "categories": {
+      "city_name": {
+        "Bangalore": 1,
+        "Chennai": 1,
+        "Delhi": 1,
+        "Kolkata": 1,
+        "Mumbai": 1
+      }
+    }
+  },
+  "weather": {
+    "rows": 18265,
+    "columns": [
+      "date",
+      "temperature_2m_mean",
+      "precipitation_sum",
+      "wind_speed_10m_max",
+      "city_id",
+      "grid_latitude",
+      "grid_longitude"
+    ],
+    "types": {
+      "date": "object",
+      "temperature_2m_mean": "float64",
+      "precipitation_sum": "float64",
+      "wind_speed_10m_max": "float64",
+      "city_id": "int64",
+      "grid_latitude": "float64",
+      "grid_longitude": "float64"
+    },
+    "missing": {
+      "date": 0,
+      "temperature_2m_mean": 0,
+      "precipitation_sum": 0,
+      "wind_speed_10m_max": 0,
+      "city_id": 0,
+      "grid_latitude": 0,
+      "grid_longitude": 0
+    },
+    "exact_duplicates": 0,
+    "key_duplicates": 0,
+    "summary": {
+      "temperature_2m_mean": {
+        "count": 18265.0,
+        "mean": 26.26284697508897,
+        "std": 4.392323146784934,
+        "min": 5.9,
+        "25%": 23.8,
+        "50%": 27.0,
+        "75%": 29.4,
+        "max": 40.1
+      },
+      "precipitation_sum": {
+        "count": 18265.0,
+        "mean": 3.70632904462086,
+        "std": 10.568541821620924,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 2.9,
+        "max": 303.8
+      },
+      "wind_speed_10m_max": {
+        "count": 18265.0,
+        "mean": 4.312926361894334,
+        "std": 1.421205171541588,
+        "min": 1.24,
+        "25%": 3.26,
+        "50%": 4.18,
+        "75%": 5.17,
+        "max": 18.12
+      },
+      "city_id": {
+        "count": 18265.0,
+        "mean": 3.0,
+        "std": 1.4142522777203619,
+        "min": 1.0,
+        "25%": 2.0,
+        "50%": 3.0,
+        "75%": 4.0,
+        "max": 5.0
+      },
+      "grid_latitude": {
+        "count": 18265.0,
+        "mean": 19.2,
+        "std": 5.904397401327162,
+        "min": 13.0,
+        "25%": 13.0,
+        "50%": 19.0,
+        "75%": 22.5,
+        "max": 28.5
+      },
+      "grid_longitude": {
+        "count": 18265.0,
+        "mean": 79.25,
+        "std": 5.062252762682789,
+        "min": 73.0,
+        "25%": 77.25,
+        "50%": 77.5,
+        "75%": 80.25,
+        "max": 88.25
+      }
+    },
+    "iqr_outliers": {
+      "temperature_2m_mean": 532,
+      "precipitation_sum": 2679,
+      "wind_speed_10m_max": 262,
+      "city_id": 0,
+      "grid_latitude": 0,
+      "grid_longitude": 3653
+    },
+    "categories": {}
+  }
+}

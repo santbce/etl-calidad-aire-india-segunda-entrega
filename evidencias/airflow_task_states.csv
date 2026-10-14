@@ -1,10 +1,10 @@
 dag_id,run_id,task_id,state,start_date,end_date
-etl_calidad_aire_india_enriquecido,manual__2026-10-13T00:15:29+00:00,preparar_ejecucion,success,,2026-10-13 00:15:33.849876
-etl_calidad_aire_india_enriquecido,manual__2026-10-13T00:15:29+00:00,extraer_primera_entrega_sqlite,success,,2026-10-13 00:15:45.728797
-etl_calidad_aire_india_enriquecido,manual__2026-10-13T00:15:29+00:00,extraer_dataset_ciudades_bd,success,,2026-10-13 00:15:45.285614
-etl_calidad_aire_india_enriquecido,manual__2026-10-13T00:15:29+00:00,extraer_api_clima,success,,2026-10-13 00:15:46.094579
-etl_calidad_aire_india_enriquecido,manual__2026-10-13T00:15:29+00:00,eda_tres_fuentes,success,,2026-10-13 00:15:51.900222
-etl_calidad_aire_india_enriquecido,manual__2026-10-13T00:15:29+00:00,transformar_integrar,success,,2026-10-13 00:15:52.598184
-etl_calidad_aire_india_enriquecido,manual__2026-10-13T00:15:29+00:00,validar_great_expectations,success,,2026-10-13 00:15:58.509751
-etl_calidad_aire_india_enriquecido,manual__2026-10-13T00:15:29+00:00,cargar_data_warehouse,success,,2026-10-13 00:16:03.711164
-etl_calidad_aire_india_enriquecido,manual__2026-10-13T00:15:29+00:00,visualizar_desde_warehouse,success,,2026-10-13 00:16:08.795540
+etl_calidad_aire_india_enriquecido,scheduled__2026-10-13T00:00:00+00:00,cargar_data_warehouse,success,2026-10-14 01:21:30.493241,2026-10-14 01:21:36.120540
+etl_calidad_aire_india_enriquecido,scheduled__2026-10-13T00:00:00+00:00,eda_tres_fuentes,success,2026-10-14 01:21:07.525970,2026-10-14 01:21:11.569613
+etl_calidad_aire_india_enriquecido,scheduled__2026-10-13T00:00:00+00:00,extraer_api_clima,success,2026-10-14 01:21:01.975142,2026-10-14 01:21:02.693343
+etl_calidad_aire_india_enriquecido,scheduled__2026-10-13T00:00:00+00:00,extraer_dataset_ciudades_bd,success,2026-10-14 01:20:43.172949,2026-10-14 01:20:54.692304
+etl_calidad_aire_india_enriquecido,scheduled__2026-10-13T00:00:00+00:00,extraer_primera_entrega_sqlite,success,2026-10-14 01:20:58.008952,2026-10-14 01:20:58.579572
+etl_calidad_aire_india_enriquecido,scheduled__2026-10-13T00:00:00+00:00,preparar_ejecucion,success,2026-10-14 01:20:39.435493,2026-10-14 01:20:39.694703
+etl_calidad_aire_india_enriquecido,scheduled__2026-10-13T00:00:00+00:00,transformar_integrar,success,2026-10-14 01:21:15.672159,2026-10-14 01:21:16.458380
+etl_calidad_aire_india_enriquecido,scheduled__2026-10-13T00:00:00+00:00,validar_great_expectations,success,2026-10-14 01:21:20.758547,2026-10-14 01:21:27.089324
+etl_calidad_aire_india_enriquecido,scheduled__2026-10-13T00:00:00+00:00,visualizar_desde_warehouse,success,2026-10-14 01:21:40.418249,2026-10-14 01:21:46.569071

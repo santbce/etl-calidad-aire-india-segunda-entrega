@@ -1,0 +1,177 @@
+{
+  "verified_at_utc": "2026-10-14T01:54:07.662541+00:00",
+  "run_id": "scheduled__2026-10-13T00:00:00+00:00",
+  "total": 42,
+  "passed": 42,
+  "failed": 0,
+  "tests": [
+    {
+      "test": "lote aprobado de 18265 filas",
+      "passed": true
+    },
+    {
+      "test": "claves ciudad y fecha sin duplicados",
+      "passed": true
+    },
+    {
+      "test": "cinco ciudades con 3653 dias cada una",
+      "passed": true
+    },
+    {
+      "test": "base de la primera entrega intacta",
+      "passed": true
+    },
+    {
+      "test": "respuestas de la api con estructura y procedencia",
+      "passed": true
+    },
+    {
+      "test": "rechazo de unidades distintas en la api",
+      "passed": true
+    },
+    {
+      "test": "rechazo de respuesta incompleta de la api",
+      "passed": true
+    },
+    {
+      "test": "rechazo de dias desordenados de la api",
+      "passed": true
+    },
+    {
+      "test": "bloqueo de mediciones sin clima",
+      "passed": true
+    },
+    {
+      "test": "bloqueo de union que duplicaria mediciones",
+      "passed": true
+    },
+    {
+      "test": "bloqueo de fecha que no se puede convertir",
+      "passed": true
+    },
+    {
+      "test": "gx y carga rechazan aqi_infinito",
+      "passed": true
+    },
+    {
+      "test": "gx y carga rechazan coordenada_api_nula",
+      "passed": true
+    },
+    {
+      "test": "gx y carga rechazan aqi_nulo",
+      "passed": true
+    },
+    {
+      "test": "gx y carga rechazan id_duplicado",
+      "passed": true
+    },
+    {
+      "test": "gx y carga rechazan ciudad_fecha_duplicada",
+      "passed": true
+    },
+    {
+      "test": "gx y carga rechazan ciudad_no_permitida",
+      "passed": true
+    },
+    {
+      "test": "gx y carga rechazan categoria_no_permitida",
+      "passed": true
+    },
+    {
+      "test": "gx y carga rechazan lluvia_negativa",
+      "passed": true
+    },
+    {
+      "test": "gx y carga rechazan contaminante_negativo",
+      "passed": true
+    },
+    {
+      "test": "gx y carga rechazan temperatura_imposible",
+      "passed": true
+    },
+    {
+      "test": "gx y carga rechazan fecha_fuera_del_periodo",
+      "passed": true
+    },
+    {
+      "test": "warehouse intacto despues de los casos invalidos",
+      "passed": true
+    },
+    {
+      "test": "bloqueo de csv modificado despues de validar",
+      "passed": true
+    },
+    {
+      "test": "bloqueo de aprobacion perteneciente a otro lote",
+      "passed": true
+    },
+    {
+      "test": "conteos de dimensiones hechos y vista",
+      "passed": true
+    },
+    {
+      "test": "postgresql rechaza aqi negativo",
+      "passed": true
+    },
+    {
+      "test": "postgresql rechaza ciudad inexistente",
+      "passed": true
+    },
+    {
+      "test": "postgresql rechaza medicion duplicada",
+      "passed": true
+    },
+    {
+      "test": "postgresql rechaza aqi nulo",
+      "passed": true
+    },
+    {
+      "test": "restricciones probadas sin alterar datos",
+      "passed": true
+    },
+    {
+      "test": "recarga sin duplicar ni cambiar mediciones",
+      "passed": true
+    },
+    {
+      "test": "mediciones cargadas coinciden con el archivo aprobado",
+      "passed": true
+    },
+    {
+      "test": "cuatro graficos validos y con resolucion suficiente",
+      "passed": true
+    },
+    {
+      "test": "dashboard enlaza sus cuatro graficos",
+      "passed": true
+    },
+    {
+      "test": "resumen mensual completo de cinco ciudades",
+      "passed": true
+    },
+    {
+      "test": "ejecucion diaria real creada por el scheduler",
+      "passed": true
+    },
+    {
+      "test": "primera entrega intacta al terminar",
+      "passed": true
+    },
+    {
+      "test": "webserver y scheduler responden saludables",
+      "passed": true
+    },
+    {
+      "test": "dump restaurado en una base de prueba independiente",
+      "passed": true
+    },
+    {
+      "test": "notebook valido y sin claves temporales en sus salidas",
+      "passed": true
+    },
+    {
+      "test": "paquete final completo y archivos sin corrupcion",
+      "passed": true
+    }
+  ]
+}

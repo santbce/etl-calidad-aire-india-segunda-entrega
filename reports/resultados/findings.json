@@ -11,29 +11,29 @@
   },
   "aqi_weather_correlations_by_city": {
     "Bangalore": {
-      "temperature_2m_mean": -0.007080038258337564,
-      "precipitation_sum": 0.04181256757906805,
-      "wind_speed_10m_max": -0.015673834122889547
+      "temperature_2m_mean": -0.007080038258337492,
+      "precipitation_sum": 0.04078358584508489,
+      "wind_speed_10m_max": -0.01567383412288985
     },
     "Chennai": {
-      "temperature_2m_mean": 0.023394984863851782,
-      "precipitation_sum": -0.020866554416126486,
-      "wind_speed_10m_max": 0.011120834950397715
+      "temperature_2m_mean": 0.0233949848638514,
+      "precipitation_sum": -0.020859319554798954,
+      "wind_speed_10m_max": 0.011120834950397637
     },
     "Delhi": {
-      "temperature_2m_mean": 0.01725453723066047,
-      "precipitation_sum": 0.00487873171910529,
-      "wind_speed_10m_max": 0.013581580845264429
+      "temperature_2m_mean": 0.017254537230660394,
+      "precipitation_sum": 0.007389771928791496,
+      "wind_speed_10m_max": 0.013581580845264342
     },
     "Kolkata": {
-      "temperature_2m_mean": 0.0025705838365574765,
-      "precipitation_sum": 0.0333501265214514,
-      "wind_speed_10m_max": 0.0024917298020273736
+      "temperature_2m_mean": 0.0025705838365576807,
+      "precipitation_sum": 0.03299445918136412,
+      "wind_speed_10m_max": 0.0024917298020273675
     },
     "Mumbai": {
-      "temperature_2m_mean": -0.0044784420869067205,
-      "precipitation_sum": -0.01612837915017012,
-      "wind_speed_10m_max": 0.005995563750390929
+      "temperature_2m_mean": -0.004478442086906128,
+      "precipitation_sum": -0.01669968757716002,
+      "wind_speed_10m_max": 0.005995563750391145
     }
   }
 }
