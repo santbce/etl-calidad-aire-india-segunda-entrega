@@ -10,6 +10,7 @@ import hashlib
 import sqlite3
 import time
 from contextlib import closing
+#aqui importamos las librerias para manejar tablas y consultar las fuentes
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
@@ -42,6 +43,7 @@ def workspace(run_id):
     return path
 
 def readonly_sqlite(path):
+    #aqui abrimos la base original solo para leerla
     return sqlite3.connect(Path(path).resolve().as_uri() + '?mode=ro', uri=True)
 
 def session():
@@ -215,6 +217,7 @@ def eda_sources(run_id):
 
 def transform_merge(run_id):
     path = workspace(run_id)
+    #aqui leemos las tres fuentes de esta ejecucion
     air, cities, weather = (pd.read_csv(path / f'{n}.csv') for n in ['air', 'cities', 'weather'])
     for df in [air, weather]:
         df['date'] = pd.to_datetime(df['date'], errors='raise').dt.strftime('%Y-%m-%d')
@@ -239,6 +242,7 @@ def validate_dataframe(df, report_path):
     #aqui creamos la suite y ejecutamos el checkpoint de calidad
     import great_expectations as gx
     import great_expectations.expectations as gxe
+    #aqui creamos el contexto y las reglas de calidad
     context = gx.get_context(mode='ephemeral')
     suite = gx.ExpectationSuite(name='contrato_calidad_aire_india')
     suite.add_expectation(gxe.ExpectTableRowCountToEqual(value=NROWS))
@@ -260,6 +264,7 @@ def validate_dataframe(df, report_path):
     batch = asset.add_batch_definition_whole_dataframe('lote_historico')
     validation = context.validation_definitions.add(gx.ValidationDefinition(data=batch, suite=suite, name='auditoria_india'))
     checkpoint = context.checkpoints.add(gx.Checkpoint(name='control_airflow', validation_definitions=[validation]))
+    #aqui ejecutamos las reglas sobre el lote integrado
     result = checkpoint.run(batch_parameters={'dataframe': df})
     details = {'success': bool(result.success),
                'validation_results': [r.to_json_dict() for r in result.run_results.values()]}
