@@ -60,7 +60,7 @@ las fechas originales se interpretan como días locales de india. es una hipóte
 
 #aqui explicamos las validaciones
 
-aqui revisamos el conteo exacto, campos obligatorios no nulos, identificador único, unicidad compuesta ciudad/fecha, ciudades y categorías permitidas, fechas del periodo, rangos geográficos, contaminantes/aqi/lluvia/viento no negativos y un rango físico amplio de temperatura. un control adicional compara el conjunto completo de las cinco ciudades y los 3.653 días esperados.
+aqui revisamos el conteo exacto, campos obligatorios no nulos, identificador único, unicidad compuesta ciudad/fecha, ciudades y categorías permitidas, fechas del periodo, rangos geográficos, contaminantes/aqi/lluvia/viento finitos y no negativos y un rango físico amplio de temperatura. un control adicional compara el conjunto completo de las cinco ciudades y los 3.653 días esperados.
 
 se guardan `expectation_suite.json`, `validation.json` y una aprobación con sha-256 del csv validado. la carga verifica que el lote no haya cambiado desde la aprobación. una validación anterior no habilita un archivo modificado. aqui guardamos el resultado del checkpoint para revisar cada validacion.
 
@@ -74,7 +74,7 @@ postgresql aplica pk, fk, unique y check. se reemplaza el lote dentro de una sol
 
 las figuras y el dashboard se generan leyendo únicamente `india_dw.air_quality_enriched` tras la carga. incluyen promedio de aqi por ciudad, distribuciones del clima, evolución anual y correlaciones por ciudad. `findings.json`, `monthly.csv` y `correlations_by_city.csv` permiten comprobar cifras. las conclusiones de la ejecución se presentan en `docs/resultados_ejecucion.md`.
 
-aqui probamos el dag con `airflow dags test` y consultamos `dag_run` y `task_instance` para revisar los estados de las tareas. después permite iniciar scheduler/webserver para observar el dag. la prueba deliberada introduce precipitación negativa en un lote separado: gx debe rechazarlo y el lote del warehouse debe conservarse. el notebook descarga el código, reportes y un dump postgresql al terminar.
+aqui probamos la orquestacion ejecutando `airflow dags test` y consultamos `dag_run` y `task_instance` en la base de metadatos. después iniciamos scheduler/webserver para observar el dag. la prueba deliberada introduce precipitación negativa en un lote separado: gx debe rechazarlo y el lote del warehouse debe conservarse. el notebook descarga el código, reportes y un dump postgresql al terminar.
 
 #aqui explicamos como guardar y entregar el proyecto
 
@@ -120,3 +120,9 @@ el dag completo termino con nueve tareas exitosas. se validaron 18.265 medicione
 #aqui explicamos como repetir la prueba de carga
 
 después de ejecutar el notebook, establece `INDIA_PROJECT_ROOT` con la carpeta del proyecto y ejecuta `python -m unittest discover -s tests`. la prueba usa el último lote aprobado; `INDIA_TEST_RUN_ID` permite seleccionar uno. comprueba el rechazo de precipitación negativa y de un csv modificado después de aprobarlo. sin un lote previo, informa que la prueba se omite.
+
+#aqui dejamos la comprobacion final
+
+las 42 comprobaciones aprobaron en colab el 13 de octubre de 2026 (hora de colombia). incluyen respuestas de api, uniones, once lotes invalidos, restricciones de postgresql, recarga sin duplicados, conciliacion con el csv, graficos, servicios y restauracion del dump. ver [auditoria completa](evidencias/auditoria_completa.json), [ejecucion diaria](evidencias/scheduler_run.json) y [prueba manual final](evidencias/manual_run.json). el scheduler diario y la prueba manual terminaron con nueve tareas exitosas cada uno.
+
+para repetir la auditoria completa, ejecuta `tests/auditoria_colab.py` con el python del entorno de airflow despues del notebook. necesita `INDIA_PROJECT_ROOT`, `INDIA_DATABASE_URL`, `INDIA_SOURCE_ZIP` y `AIRFLOW_HOME`, ademas del lote aprobado y la evidencia del scheduler. la celda de auditoria configura la ruta del zip.
